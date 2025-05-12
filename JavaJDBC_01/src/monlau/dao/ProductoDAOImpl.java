@@ -59,7 +59,23 @@ public class ProductoDAOImpl implements ProductoDAO {
     }
 
     public void update(Producto producto) {
-
+        Connection conn = null;
+        try{
+            registerDriver();
+            conn = DriverManager.getConnection(DB_URL, DB_USR, DB_PWD);
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("update producto set ");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
     }
 
     public void delete(Producto producto) {

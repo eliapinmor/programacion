@@ -16,7 +16,7 @@ import java.sql.*;
 public class ProductoDAOImpl implements ProductoDAO {
 
     static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://localhost:3306/inventario?useSSL=false";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/progdao?useSSL=false";
     static final String DB_USR = "root";
     static final String DB_PWD = "";
 
@@ -64,7 +64,10 @@ public class ProductoDAOImpl implements ProductoDAO {
             registerDriver();
             conn = DriverManager.getConnection(DB_URL, DB_USR, DB_PWD);
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate("update producto set ");
+            stmt.executeUpdate("UPDATE producto SET nombre = '"
+                    + producto.getNombre() + "', precio = "
+                    + producto.getPrecio() + " WHERE id = "
+                    + producto.getId() + ";");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
@@ -79,7 +82,24 @@ public class ProductoDAOImpl implements ProductoDAO {
     }
 
     public void delete(Producto producto) {
-
+        Connection conn = null;
+        try{
+            registerDriver();
+            conn = DriverManager.getConnection(DB_URL, DB_USR, DB_PWD);
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("DELETE FROM producto WHERE id = "
+                    + producto.getId() + ";");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
     }
 
     public Producto read(Integer id) {

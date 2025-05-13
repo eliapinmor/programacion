@@ -17,7 +17,7 @@ public class ProductoRepository {
     }
     @Transactional
     public void insertar(Producto producto) {
-        plantilla.update("insert into Productos (nombre, apellidos, edad) values (?,?,?)",
+        plantilla.update("insert into Productos (nombre, descripcion) values (?,?)",
                 producto.getNombre(), producto.getDescripcion());
     }
 
@@ -26,7 +26,7 @@ public class ProductoRepository {
     }
 
     public Producto buscarUno(String nombre) {
-        List<Producto> resultados = plantilla.query("select * from Producto where nombre=?",new ProductoMapper(),nombre);
+        List<Producto> resultados = plantilla.query("select * from Productos where nombre=?",new ProductoMapper(),nombre);
         if (resultados.isEmpty()) {
             System.out.println("No se encontró ningún resultado para: " + nombre);
             return null;

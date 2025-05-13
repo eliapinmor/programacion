@@ -1,6 +1,5 @@
-CREATE TABLE IF NOT EXISTS Personas (
+CREATE TABLE IF NOT EXISTS Productos (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(255),
-    apellidos VARCHAR(255),
-    edad INT
+    descripcion VARCHAR(255),
     );

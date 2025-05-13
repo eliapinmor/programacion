@@ -1,10 +1,9 @@
 package org.example.demojdbc.model;
 
-public class Persona {
+public class Producto {
     private int id;
     private String nombre;
-    private String apellidos;
-    private int edad;
+    private String descripcion;
 
     public int getId() {
         return id;
@@ -20,20 +19,14 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getApellidos() {
-        return apellidos;
+    public String getDescripcion() {
+        return descripcion;
     }
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-    public int getEdad() {
-        return edad;
-    }
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public Persona() {
+    public Producto() {
     }
 
 /*    public Persona(int id, String nombre, String apellidos, int edad) {
@@ -43,13 +36,12 @@ public class Persona {
         this.edad = edad;
     }*/
 
-    public Persona(String nombre, String apellidos, int edad) {
+    public Producto(String nombre, String descripcion) {
         super();
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.edad = edad;
+        this.descripcion = descripcion;
     }
-    public Persona(String nombre) {
+    public Producto(String nombre) {
         this.nombre=nombre;
     }
 

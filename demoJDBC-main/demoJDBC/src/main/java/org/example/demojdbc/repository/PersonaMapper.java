@@ -2,8 +2,8 @@ package org.example.demojdbc.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import org.example.demojdbc.model.Persona;
 
+import org.example.demojdbc.model.Persona;
 import org.springframework.jdbc.core.RowMapper;
 
 public class PersonaMapper implements RowMapper<Persona> {

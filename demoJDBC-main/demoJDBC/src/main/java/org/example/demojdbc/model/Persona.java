@@ -1,9 +1,5 @@
 package org.example.demojdbc.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 public class Persona {
     private int id;
     private String nombre;

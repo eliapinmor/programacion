@@ -1,6 +1,5 @@
 package org.example.demojdbc;
 
-import jakarta.transaction.Transactional;
 import org.example.demojdbc.model.Persona;
 import org.example.demojdbc.repository.PersonaRepository;
 import org.junit.jupiter.api.Test;

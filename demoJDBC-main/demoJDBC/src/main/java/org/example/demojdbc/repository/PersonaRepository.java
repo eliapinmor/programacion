@@ -5,7 +5,6 @@ import java.util.List;
 import org.example.demojdbc.model.Persona;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
